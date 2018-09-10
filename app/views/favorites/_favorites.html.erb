@@ -1,0 +1,15 @@
+<ul class="media-list">
+  <% likes.each do |like| %>
+    <li class="media">
+      <div class="media-body">
+        <div>
+          <p><%= like.content %></p>
+        </div>
+        <% if current_user == like.user %>
+          <%= render 'like_button', class: 'btn btn-primary btn-xs' %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+  <%= pagenate favorites %>
+</ul>
